@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { fileURLToPath } from 'url'; // ✅ ADD THIS
 import path from 'path';
+import leadRoutes from "./route/lead.route.js";
 dotenv.config();
 const app = express();
 
@@ -12,6 +13,7 @@ const MONGODB_URI = process.env.MongoDBURI;
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/leads",leadRoutes);
 
 
 mongoose.connect(MONGODB_URI, {
