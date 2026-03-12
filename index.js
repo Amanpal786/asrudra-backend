@@ -13,6 +13,7 @@ import subscriberRoutes from "./route/subscriber.routes.js";
 import exclusiveRoutes from "./route/exclusiveRoutes.js";
 import exRoutes from "./route/ex.rout.js";
 import resaleRoutes from "./route/resaleRoutes.js";
+import employeeRoutes from "./route/employee.route.js";
 
 dotenv.config();
 
@@ -50,6 +51,8 @@ app.use("/subscriber", subscriberRoutes);
 app.use("/exclusive", exclusiveRoutes);
 app.use("/exRoutes", exRoutes);
 app.use("/resale", resaleRoutes);
+app.use("/api", employeeRoutes);
+
 
 /* ------------------ SERVER ------------------ */
 app.listen(PORT, () => {
