@@ -16,6 +16,7 @@ import resaleRoutes from "./route/resaleRoutes.js";
 import employeeRoutes from "./route/employee.route.js";
 import hiringRoutes from "./route/hiring.route.js";
 import visitRoutes from "./route/visit.route.js";
+import prospectRoutes from "./route/prospect.route.js";
 
 dotenv.config();
 
@@ -56,7 +57,7 @@ app.use("/resale", resaleRoutes);
 app.use("/api", employeeRoutes);
 app.use("/api",hiringRoutes);
 app.use("/api",visitRoutes);
-
+app.use("/api",prospectRoutes);
 
 /* ------------------ SERVER ------------------ */
 app.listen(PORT, () => {
