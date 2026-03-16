@@ -1,3 +1,4 @@
+import Enquiry from "../models/enquiry.model.js";
 export const createEnquiry = async (req, res) => {
   try {
 
