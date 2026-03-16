@@ -1,16 +1,34 @@
-export const createEnquiry = async (req,res)=>{
- try{
+export const createEnquiry = async (req, res) => {
+  try {
 
-  const enquiry = new Enquiry(req.body);
+    const { fullName, email, phoneNumber, message } = req.body;
 
-  await enquiry.save();
+    if (!fullName || !email || !phoneNumber) {
+      return res.status(400).json({
+        message: "Required fields missing"
+      });
+    }
 
-  res.status(201).json({
-   message:"Enquiry saved"
-  });
+    const enquiry = new Enquiry({
+      fullName,
+      email,
+      phoneNumber,
+      message
+    });
 
- }catch(err){
-  console.log(err);
-  res.status(500).json({error:err.message});
- }
+    await enquiry.save();
+
+    res.status(201).json({
+      message: "Enquiry saved successfully"
+    });
+
+  } catch (error) {
+
+    console.error("Enquiry Error:", error);
+
+    res.status(500).json({
+      message: "Server Error",
+      error: error.message
+    });
+  }
 };
