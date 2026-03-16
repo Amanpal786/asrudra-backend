@@ -60,7 +60,7 @@ app.use("/api",hiringRoutes);
 app.use("/api",visitRoutes);
 app.use("/api",prospectRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-app.use("/api/enquiries", enquiryRoutes);
+app.use("/api/enquiry", enquiryRoutes);
 
 /* ------------------ SERVER ------------------ */
 app.listen(PORT, () => {
