@@ -1,15 +1,22 @@
-export const createEnquiry = async (req, res) => {
-  try {
+export const createEnquiry = async (req,res)=>{
+ try{
 
-    const enquiry = new Enquiry(req.body);
+  const { fullName,email,phoneNumber } = req.body;
 
-    await enquiry.save();
+  const enquiry = new Enquiry({
+   fullName,
+   email,
+   phoneNumber
+  });
 
-    res.status(201).json({
-      message: "Enquiry saved"
-    });
+  await enquiry.save();
 
-  } catch (error) {
-    res.status(500).json(error);
-  }
-};
+  res.status(201).json({
+   message:"Enquiry saved successfully"
+  });
+
+ }catch(err){
+  console.log(err);
+  res.status(500).json({error:err.message});
+ }
+}
