@@ -49,7 +49,6 @@ app.use("/api/leads", leadRoutes);
 app.use("/property", propertyRoute);
 app.use("/user", authRoute);
 app.use("/categories", categoryRoutes);
-app.use("/enquiry", enquiryRoutes);
 app.use("/footer", footerRoutes);
 app.use("/subscriber", subscriberRoutes);
 app.use("/exclusive", exclusiveRoutes);
