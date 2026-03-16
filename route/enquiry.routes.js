@@ -4,5 +4,6 @@ import { createEnquiry } from "../controller/enquiry.controller.js";
 const router = express.Router();
 
 router.post("/", createEnquiry);
+router.post("/enquiries", createEnquiry);
 
 export default router;
