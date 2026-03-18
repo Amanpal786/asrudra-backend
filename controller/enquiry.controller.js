@@ -3,6 +3,8 @@ import Enquiry from "../module/enquiry.model.js";
 export const createEnquiry = async (req, res) => {
   try {
 
+    console.log("BODY AA RHA HAI:", req.body);
+
     const { fullName, email, phoneNumber, message } = req.body;
 
     if (!fullName || !email || !phoneNumber) {
