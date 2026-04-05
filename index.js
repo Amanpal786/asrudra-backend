@@ -18,6 +18,7 @@ import visitRoutes from "./route/visit.route.js";
 import prospectRoutes from "./route/prospect.route.js";
 import dashboardRoutes from "./route/dashboard.js";
 import enquiryRoutes from "./route/enquiryRoutes.js";
+import feedbackRoutes from "./route/feedback.route.js";
 
 dotenv.config();
 
@@ -60,6 +61,7 @@ app.use("/api",visitRoutes);
 app.use("/api",prospectRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/enquiries", enquiryRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 /* ------------------ SERVER ------------------ */
 app.listen(PORT, () => {

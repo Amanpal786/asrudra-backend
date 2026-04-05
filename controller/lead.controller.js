@@ -10,6 +10,21 @@ export const getLeads = async (req, res) => {
   }
 };
 
+// GET SINGLE LEAD ✅ ADD THIS
+export const getSingleLead = async (req, res) => {
+  try {
+    const lead = await Lead.findById(req.params.id);
+
+    if (!lead) {
+      return res.status(404).json({ message: "Lead not found" });
+    }
+
+    res.json(lead);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // CREATE lead
 export const createLead = async (req, res) => {
   try {
